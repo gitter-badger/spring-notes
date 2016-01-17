@@ -13,11 +13,12 @@ import java.util.List;
 public class MongoDB {
     public static final String DB_NAME = "notes";
     public static final String TASK_COLLECTION = "Note";
-    public static final String MONGO_HOST = "99.99.99.9";
+    public static final String MONGO_HOST = "127.0.0.1";
+    //public static final String MONGO_HOST = "99.99.99.9";
     public static final int MONGO_PORT = 27017;
 
-    MongoClient mongo;
-    MongoOperations mongoOps;
+    protected MongoClient mongo;
+    protected MongoOperations mongoOps;
 
     /**
      * Constructor initiates the database connection
