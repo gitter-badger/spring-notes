@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="notes">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Angular 2 QuickStart</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+  </head>  
+  <body>
+    
+    <div class="container" ng-controller="list">
+        <div class="row">
+            <div class="col-lg-12">                
+                <h1>Notes</h1>
+                <div class="alert alert-{{alert.color}}" ng-hide="alert.hide">
+                    <button type="button" class="close" ng-click="hide_alert()"><span aria-hidden="true">&times;</span></button>
+                    <strong>{{alert.heading}}</strong> {{alert.text}}
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>Add note</h4>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" ng-model="note.title" placeholder="Title..." required autofocus class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <textarea ng-model="note.content" placeholder="Content..." required autofocus class="form-control" control-enter="save()"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary pull-right" ng-click="save()">Save</button>
+                            </div>
+                        </form>
+                    </div>                    
+                </div>               
+                
+                <div class="panel panel-primary" ng-repeat="note in notes | reverse">
+                    <div class="panel-heading">{{note.title}} <span class="pull-right"><a class="white" ng-click="deleteNote(note.id)"><span class="glyphicon glyphicon-remove"></span></a></span></div>
+                    <div class="panel-body">
+                        {{note.content}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+    <script src="app.js"></script>
+  </body>
+</html>
