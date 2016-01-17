@@ -9,13 +9,19 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath 'net.saliman:gradle-cobertura-plugin:2.0.0' // cobertura plugin
+		classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.4.0'
 	}
 }
+
+cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'spring-boot' 
+apply plugin: 'spring-boot'
+apply plugin: 'cobertura'
+apply plugin: 'com.github.kt3k.coveralls'
 
 jar {
 	baseName = 'inventory'
