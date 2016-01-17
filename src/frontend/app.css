@@ -5,3 +5,13 @@ a.white:hover {
     color: white;
     cursor: pointer;
 }
+
+span.tiny {
+    color: gray;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.CodeMirror, .CodeMirror-scroll {
+    min-height: 100px;
+}

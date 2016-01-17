@@ -8,7 +8,8 @@
     <title>Angular 2 QuickStart</title>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="bower_components/simplemde/dist/simplemde.min.css">
+    <link rel="stylesheet" href="app.css">        
   </head>  
   <body>
     
@@ -31,7 +32,7 @@
                                 <textarea ng-model="note.content" placeholder="Content..." required autofocus class="form-control" control-enter="save()"></textarea>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-primary pull-right" ng-click="save()">Save</button>
+                                <span class="pull-left tiny">(You can use Markdown)</span><button class="btn btn-primary pull-right" ng-click="save()">Save</button>
                             </div>
                         </form>
                     </div>                    
@@ -39,10 +40,24 @@
                 
                 <div class="panel panel-primary" ng-repeat="note in notes | reverse">
                     <div class="panel-heading">{{note.title}} <span class="pull-right"><a class="white" ng-click="deleteNote(note.id)"><span class="glyphicon glyphicon-remove"></span></a></span></div>
-                    <div class="panel-body">
+                    <div class="panel-body" btf-markdown="note.content">
                         {{note.content}}
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <footer>
+                    <p>
+                        Java/Spring Note Taking App &copy; by <a href="https://sycha.cz/">Jakub Sycha</a>, 2016
+                        <span class="pull-right">
+                            <a href="https://github.com/JacobCZ/spring-notes">Fork this on GitHub!</a>
+                        </span>
+                    </p>
+                </footer>
             </div>
         </div>
     </div>
@@ -52,5 +67,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     
     <script src="app.js"></script>
+    
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="bower_components/showdown/compressed/Showdown.min.js"></script>
+    <script src="bower_components/angular-markdown-directive/markdown.js"></script>
+    
+    <script src="bower_components/simplemde/dist/simplemde.min.js"></script>    
   </body>
 </html>

@@ -3,7 +3,7 @@ var backend_host = "localhost";
 var backend_port = "8080";
 // END CONFIG BLOCK
 
-var app = angular.module("notes", []);
+var app = angular.module("notes", ["btford.markdown"]);
 
 app.filter('reverse', function () {
     return function (items) {
@@ -24,7 +24,7 @@ app.directive("controlEnter", function() {
     };
 });
 
-app.controller("list", ["$scope", "$http", "$timeout", function ($scope, $http, $timeout) {
+app.controller("list", ["$scope", "$http", "$timeout", "$interval", function ($scope, $http, $timeout, $interval) {
     $scope.notes = [];
     $scope.alert = {
         hide: true,
@@ -45,6 +45,7 @@ app.controller("list", ["$scope", "$http", "$timeout", function ($scope, $http, 
 
     $scope.save = function () {
         var note = $scope.note;
+        note.content = simplemde.value();
         $http({
             method: "PUT",
             url: "http://" + backend_host + ":" + backend_port + "/add-note",
@@ -54,6 +55,7 @@ app.controller("list", ["$scope", "$http", "$timeout", function ($scope, $http, 
             console.log(data);
             $scope.note.title = "";
             $scope.note.content = "";
+            simplemde.value("");
             $scope.load();
             $scope.alert = {
                 hide: false,
@@ -108,4 +110,18 @@ app.controller("list", ["$scope", "$http", "$timeout", function ($scope, $http, 
     };
 
     $scope.load();
+    
+    $interval(function() {
+        $scope.load();
+    }, 10000);
+    
+    var simplemde = new SimpleMDE({
+        spellChecker: false,
+        status: false,
+        autosave: {
+            enabled: true,
+            uniqueId: "Spring-Notes-Form-Sutosave",
+            delay: 1000,
+        }
+    });
 }]);
