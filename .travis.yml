@@ -9,6 +9,3 @@ before_install:
 script:
   - ./gradlew test
   - ./gradlew build
-
-after_success:
-- ./gradlew cobertura coveralls
