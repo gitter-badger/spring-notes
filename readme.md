@@ -11,7 +11,8 @@ You can easily compile this using gradle.
  - Make sure ```./gradlew(.bat)``` is executable
  - Execute ```./gradlew build```
  - Navigate to ```./build/libs```
- - Run with ```java -jar inventory-0.0.1-SNAPSHOT.jar```
+ - Run with ```java -jar name-of-file.jar```
+ - You can also skip the compiling ang grap a pre-compiled copy over [here](https://github.com/JacobCZ/spring-notes/releases)
 
 ## Connecting to database
 To use this app, you will need a MongoDB database.
