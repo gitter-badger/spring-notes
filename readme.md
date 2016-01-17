@@ -1,4 +1,4 @@
-Java/Spring Notes [![Build Status](https://travis-ci.org/JacobCZ/spring-notes.svg?branch=master)](https://travis-ci.org/JacobCZ/spring-notes)
+Java/Spring Notes [![Build Status](https://travis-ci.org/JacobCZ/spring-notes.svg?branch=master)](https://travis-ci.org/JacobCZ/spring-notes) ![](https://reposs.herokuapp.com/?path=JacobCZ/spring-notes&style=flat) [![Coverage Status](https://coveralls.io/repos/JacobCZ/spring-notes/badge.svg?branch=master&service=github)](https://coveralls.io/github/JacobCZ/spring-notes?branch=master)
 =================
 This is a relatively light-weight (in terms of java lightweight-ness :wink:) note-taking app inspired
 by Google Keep. Installation and running is pretty simple thanks to Gradle and you can even grab a
