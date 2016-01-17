@@ -1,6 +1,6 @@
-package cz.sycha.inventory.cz.sycha.inventory.controllers;
+package cz.sycha.notes.controllers;
 
-import cz.sycha.inventory.cz.sycha.inventory.models.Index;
+import cz.sycha.notes.models.Index;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

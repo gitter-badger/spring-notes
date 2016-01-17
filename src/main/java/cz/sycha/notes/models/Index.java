@@ -1,7 +1,5 @@
-package cz.sycha.inventory.cz.sycha.inventory.models;
+package cz.sycha.notes.models;
 
-import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,8 +10,8 @@ public class Index {
     public Index(long id) {
         this.id = id;
 
-        info.put("Version", "1.0.0");
-        info.put("Whatever", "Else");
+        info.put("version", "1.0-RC");
+        info.put("information", "This is the API frontend of the Java/Spring note-taking app.");
     }
 
     public long getId() {

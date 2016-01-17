@@ -1,4 +1,4 @@
-package cz.sycha.inventory.cz.sycha.inventory;
+package cz.sycha.notes;
 
 import org.springframework.stereotype.Component;
 

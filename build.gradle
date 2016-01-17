@@ -18,8 +18,8 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 
 jar {
-	baseName = 'inventory'
-	version = '0.0.1-SNAPSHOT'
+	baseName = 'notes'
+	version = '1.0-RC'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

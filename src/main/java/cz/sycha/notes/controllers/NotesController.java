@@ -1,8 +1,8 @@
-package cz.sycha.inventory.cz.sycha.inventory.controllers;
+package cz.sycha.notes.controllers;
 
-import cz.sycha.inventory.cz.sycha.inventory.MongoDB;
-import cz.sycha.inventory.cz.sycha.inventory.exceptions.NoteNotFoundException;
-import cz.sycha.inventory.cz.sycha.inventory.models.Note;
+import cz.sycha.notes.MongoDB;
+import cz.sycha.notes.exceptions.NoteNotFoundException;
+import cz.sycha.notes.models.Note;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;

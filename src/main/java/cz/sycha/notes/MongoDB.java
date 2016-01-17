@@ -1,7 +1,7 @@
-package cz.sycha.inventory.cz.sycha.inventory;
+package cz.sycha.notes;
 
 import com.mongodb.MongoClient;
-import cz.sycha.inventory.cz.sycha.inventory.models.Note;
+import cz.sycha.notes.models.Note;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -11,7 +11,7 @@ import java.net.UnknownHostException;
 import java.util.List;
 
 public class MongoDB {
-    public static final String DB_NAME = "inventory";
+    public static final String DB_NAME = "notes";
     public static final String TASK_COLLECTION = "Note";
     public static final String MONGO_HOST = "99.99.99.9";
     public static final int MONGO_PORT = 27017;

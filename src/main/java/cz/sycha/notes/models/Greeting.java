@@ -1,4 +1,4 @@
-package cz.sycha.inventory.cz.sycha.inventory.models;
+package cz.sycha.notes.models;
 
 public class Greeting {
     private final long id;

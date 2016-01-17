@@ -1,4 +1,4 @@
-package cz.sycha.inventory;
+package cz.sycha.notes;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
