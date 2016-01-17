@@ -1,3 +1,8 @@
+// CONFIG BLOCK
+var backend_host = "localhost";
+var backend_port = "8080";
+// END CONFIG BLOCK
+
 var app = angular.module("notes", []);
 
 app.filter('reverse', function () {
@@ -42,7 +47,7 @@ app.controller("list", ["$scope", "$http", "$timeout", function ($scope, $http, 
         var note = $scope.note;
         $http({
             method: "PUT",
-            url: "http://localhost:8080/add-note",
+            url: "http://" + backend_host + ":" + backend_port + "/add-note",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             data: $.param(note)
         }).then(function (data) {
@@ -65,7 +70,7 @@ app.controller("list", ["$scope", "$http", "$timeout", function ($scope, $http, 
     $scope.load = function () {
         $http({
             method: "GET",
-            url: "http://localhost:8080/notes"
+            url: "http://" + backend_host + ":" + backend_port + "/notes"
         }).then(function (response) {
             var tasks = $scope.notes;
             var localTasks = [];
@@ -86,7 +91,7 @@ app.controller("list", ["$scope", "$http", "$timeout", function ($scope, $http, 
     $scope.deleteNote = function(id) {
         $http({
             method: "DELETE",
-            url: "http://localhost:8080/delete-note?id=" + id,
+            url: "http://" + backend_host + ":" + backend_port + "/delete-note?id=" + id,
             headers: {"Content-Type": "application/x-www-form-urlencoded"}            
         }).then(function(response) {
             $scope.load();
