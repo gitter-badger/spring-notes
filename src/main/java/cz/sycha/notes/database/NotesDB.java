@@ -13,7 +13,7 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.List;
 
-public class MongoDB {
+public class NotesDB {
     public static final String DB_NAME = DBConfig.getDbName();
     public static final String DB_COLLECTION = DBConfig.getDbCollection();
     public static final String MONGO_HOST = DBConfig.getDbHost();
@@ -30,7 +30,7 @@ public class MongoDB {
     /**
      * Constructor initiates the database connection
      */
-    public MongoDB() {
+    public NotesDB() {
         if(DB_USER != null || DB_PASS != null) {
             credential = MongoCredential.createCredential(DB_USER, DB_NAME, DB_PASS.toCharArray());
             try {

@@ -4,6 +4,8 @@ This is a relatively light-weight (in terms of java lightweight-ness :wink:) not
 by Google Keep. Installation and running is pretty simple thanks to Gradle and you can even grab a
 pre-compiled .jar if you don't feel like doing it yourself.
 
+#### Do you want to report a bug or propose a new feature? Do so on our [BugTracker](https://sycha-design.myjetbrains.com/youtrack/issues/SN)!
+
 ## Compiling
 You can easily compile this using gradle.
  - Create a new directory a clone this repo using ```git clone git@github.com:JacobCZ/spring-notes.git```

@@ -1,6 +1,6 @@
 package cz.sycha.notes;
 
-import cz.sycha.notes.database.MongoDB;
+import cz.sycha.notes.database.NotesDB;
 import cz.sycha.notes.models.Note;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +20,7 @@ public class InventoryApplicationTests {
 
 	@Test
 	public void databaseConnectsAndWorks() {
-		MongoDB db = new MongoDB();
+		NotesDB db = new NotesDB();
 
 		// This is just a precaution in a case, there already is a record with id 1
 		db.deleteTaskById(1);

@@ -1,6 +1,6 @@
 package cz.sycha.notes.controllers;
 
-import cz.sycha.notes.database.MongoDB;
+import cz.sycha.notes.database.NotesDB;
 import cz.sycha.notes.exceptions.NoteNotFoundException;
 import cz.sycha.notes.models.Note;
 import org.springframework.web.bind.annotation.*;
@@ -15,12 +15,12 @@ import java.util.concurrent.atomic.AtomicLong;
 public class NotesController {
     private final AtomicLong counter = new AtomicLong();
     private final Map<Long, Note> notes = new HashMap<Long, Note>();
-    private final MongoDB db;
+    private final NotesDB db;
 
     private final Random rand;
 
     public NotesController() {
-        db = new MongoDB();
+        db = new NotesDB();
         rand = new Random();
     }
 
