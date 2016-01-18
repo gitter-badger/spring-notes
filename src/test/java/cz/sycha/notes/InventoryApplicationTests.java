@@ -1,5 +1,6 @@
 package cz.sycha.notes;
 
+import cz.sycha.notes.database.MongoDB;
 import cz.sycha.notes.models.Note;
 import org.junit.Test;
 import org.junit.runner.RunWith;

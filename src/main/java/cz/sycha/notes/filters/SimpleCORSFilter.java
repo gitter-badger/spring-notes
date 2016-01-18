@@ -1,4 +1,4 @@
-package cz.sycha.notes;
+package cz.sycha.notes.filters;
 
 import org.springframework.stereotype.Component;
 

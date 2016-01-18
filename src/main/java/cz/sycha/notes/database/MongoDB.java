@@ -1,4 +1,4 @@
-package cz.sycha.notes;
+package cz.sycha.notes.database;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
@@ -14,14 +14,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MongoDB {
-    public static final String DB_NAME = "notes";
-    public static final String TASK_COLLECTION = "Note";
-    public static final String MONGO_HOST = System.getenv("SPRING_TASK_DB_HOST");
-    //public static final String MONGO_HOST = "99.99.99.9";
-    public static final int MONGO_PORT = Integer.parseInt(System.getenv("SPRING_TASK_DB_PORT"));
+    public static final String DB_NAME = DBConfig.getDbName();
+    public static final String DB_COLLECTION = DBConfig.getDbCollection();
+    public static final String MONGO_HOST = DBConfig.getDbHost();
+    public static final int MONGO_PORT = DBConfig.getDbPort();
 
-    private static final String DB_USER = System.getenv("SPRING_TASK_DB_USER");
-    private static final String DB_PASS = System.getenv("SPRING_TASK_DB_PASSWORD");
+    private static final String DB_USER = DBConfig.getDbUser();
+    private static final String DB_PASS = DBConfig.getDbPass();
 
     protected MongoClient mongo;
     protected MongoOperations mongoOps;
@@ -58,7 +57,7 @@ public class MongoDB {
      * @param note instance of the note to be inserted
      */
     public void insertTask(Note note) {
-        mongoOps.insert(note, TASK_COLLECTION);
+        mongoOps.insert(note, DB_COLLECTION);
     }
 
     /**
@@ -67,7 +66,7 @@ public class MongoDB {
      * @return Note note
      */
     public Note findTaskById(double id) {
-        Note note = mongoOps.findOne(new Query(Criteria.where("id").is(id)), Note.class, TASK_COLLECTION);
+        Note note = mongoOps.findOne(new Query(Criteria.where("id").is(id)), Note.class, DB_COLLECTION);
         return note;
     }
 
@@ -77,9 +76,9 @@ public class MongoDB {
      * @return boolean
      */
     public boolean deleteTaskById(double id) {
-        Note note = mongoOps.findOne(new Query(Criteria.where("id").is(id)), Note.class, TASK_COLLECTION);
+        Note note = mongoOps.findOne(new Query(Criteria.where("id").is(id)), Note.class, DB_COLLECTION);
         if(note != null) {
-            mongoOps.findAndRemove(new Query(Criteria.where("id").is(id)), Note.class, TASK_COLLECTION);
+            mongoOps.findAndRemove(new Query(Criteria.where("id").is(id)), Note.class, DB_COLLECTION);
             return true;
         }
         else {
@@ -92,7 +91,7 @@ public class MongoDB {
      * @return List<Note>
      */
     public List<Note> findAll() {
-        List<Note> note = mongoOps.findAll(Note.class, TASK_COLLECTION);
+        List<Note> note = mongoOps.findAll(Note.class, DB_COLLECTION);
         return note;
     }
 

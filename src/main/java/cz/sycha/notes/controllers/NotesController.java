@@ -1,6 +1,6 @@
 package cz.sycha.notes.controllers;
 
-import cz.sycha.notes.MongoDB;
+import cz.sycha.notes.database.MongoDB;
 import cz.sycha.notes.exceptions.NoteNotFoundException;
 import cz.sycha.notes.models.Note;
 import org.springframework.web.bind.annotation.*;
