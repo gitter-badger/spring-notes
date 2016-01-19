@@ -2,7 +2,7 @@ package cz.sycha.notes.controllers;
 
 import cz.sycha.notes.database.NotesDB;
 import cz.sycha.notes.exceptions.NoteNotFoundException;
-import cz.sycha.notes.models.Note;
+import cz.sycha.notes.pojo_models.Note;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;

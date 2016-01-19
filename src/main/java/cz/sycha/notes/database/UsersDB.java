@@ -4,7 +4,7 @@ package cz.sycha.notes.database;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
-import cz.sycha.notes.models.User;
+import cz.sycha.notes.pojo_models.User;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -58,5 +58,18 @@ public class UsersDB {
     public User findUserById(String id) {
         User user = mongoOps.findOne(new Query(Criteria.where("id").is(id)), User.class, DB_COLLECTION);
         return user;
+    }
+
+    public User findUserByUsername(String username) {
+        User user = mongoOps.findOne(new Query(Criteria.where("username").is(username)), User.class, DB_COLLECTION);
+        return user;
+    }
+
+    public void updateUser(User user) {
+        mongoOps.save(user, DB_COLLECTION);
+    }
+
+    public void saveUser(User user) {
+        mongoOps.insert(user, DB_COLLECTION);
     }
 }

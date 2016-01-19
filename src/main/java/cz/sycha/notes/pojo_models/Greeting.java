@@ -1,4 +1,4 @@
-package cz.sycha.notes.models;
+package cz.sycha.notes.pojo_models;
 
 public class Greeting {
     private final long id;

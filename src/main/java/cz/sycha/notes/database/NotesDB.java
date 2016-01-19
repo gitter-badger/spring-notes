@@ -3,7 +3,7 @@ package cz.sycha.notes.database;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
-import cz.sycha.notes.models.Note;
+import cz.sycha.notes.pojo_models.Note;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;

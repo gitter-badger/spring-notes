@@ -1,4 +1,4 @@
-package cz.sycha.notes.models;
+package cz.sycha.notes.pojo_models;
 
 import java.util.HashMap;
 import java.util.Map;
